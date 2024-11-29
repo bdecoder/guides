@@ -10,9 +10,9 @@ Chapter 2: Creating a secure environment (offline OPSEC)
 4) Tips and tricks 
 
 Chapter 3: Secure dialog (online OPSEC)
-1) Securing the DONE browser
-2) Using reliable DONE services
-3) Encrypting DONE conversations
+1) Securing the browser
+2) Using reliable services
+3) Encrypting conversations
 4) Tips and tricks 
 
 Chapter 4: The end 
