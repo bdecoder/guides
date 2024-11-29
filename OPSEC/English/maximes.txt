@@ -1,0 +1,30 @@
+The first rule of OPSEC: never discuss OPSEC.
+Encrypt everything; assume no data is ever secure in plain text.
+Compartmentalize your digital life to prevent cross-contamination of identities.
+A strong password today is weak tomorrow—regularly update them.
+No software is secure; only use open-source, vetted software when possible.
+Data leaks often start with physical access; secure your devices physically.
+Assume every device can be compromised; use separate devices for separate purposes.
+Anonymity is built, not bought—be cautious with “privacy” services.
+Online, never mix real and alias information, even accidentally.
+Treat every email and link as suspect until proven safe.
+If it’s inconvenient, it’s probably good OPSEC.
+Avoid tracking; disable cookies, user tracking, and unnecessary permissions.
+Fake personas should have plausible details and consistency.
+Always verify software hashes before installation.
+Never rely on one line of defense; redundancy is key.
+Use burner phones or virtual numbers for communication that requires anonymity.
+Virtual machines can shield but won’t save you from physical compromise.
+Always securely erase files—deletion does not mean gone.
+Log out, clear cookies, and close browsers when done.
+Assume your adversary knows more about your habits than you think.
+Verify network security settings—no open ports unless necessary.
+If you wouldn’t say it in public, don’t put it online.
+Hide sensitive data in encrypted containers on external drives.
+Use unique passwords for every service to minimize impact if breached.
+Disable all unnecessary OS services and restrict permissions.
+VPNs and Tor are tools, not complete solutions; use wisely.
+A compromised machine must be wiped and reset—no exceptions.
+When in doubt, assume data is logged; minimize what you share.
+Trust is earned, and rarely extended to cloud services.
+Physical destruction is the final backup for secure data removal.

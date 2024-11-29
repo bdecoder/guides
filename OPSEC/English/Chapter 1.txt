@@ -1,0 +1,13 @@
+1) What is OPSEC?
+OPSEC (or OPerating SECurity) is the protection of the digital environment. It consists of a multitude of methods, tools and reflexes that do two things: Firstly, OPSEC greatly reduces the chance of your sensitive information (IP address, physical address, surname, first name, etc.) being leaked. This is referred to as online OPSEC. Secondly, in the event of an unfortunate leak of sensitive/reprehensible information about you, OPSEC makes it possible to prevent anyone other than you from accessing private information (family albums, compromising photos, etc.). This is known as offline OPSEC. More generally, if properly applied, OPSEC can prevent any legal proceedings, dox, or other joysticks. 
+
+2) Fundamental principles
+Personally, I like to divide OPSEC into two parts:
+First, there's an offline OPSEC. This OPSEC allows you, in the event of a problem, to easily make your sensitive data disappear, or at least make access to it very difficult for unauthorized people. There are 3 fundamental pillars to this OPSEC: 
+-First, encryption and concealment of sensitive data
+-secondly, the compartmentalization of uses
+-Lastly, “virtual cleanliness” (the absence of logs and evidence on your computer).
+There's also another OPSEC: OPSEC online. The sole purpose of this OPSEC is to prevent the leakage of sensitive data. For this OPSEC, there are 3 main pillars:
+-First, the use of appropriate equipment to go on the internet and communicate with people
+-Second, the encryption of communications
+-Lastly, the creation of a "legend", a digital character

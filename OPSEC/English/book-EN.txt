@@ -1,0 +1,131 @@
+Summary: 
+Chapter 1: Introduction to OPSEC 
+1) Definition and day-to-day application of OPSEC 
+2) OPSEC fundamentals 
+
+Chapter 2: Creating a secure environment (offline OPSEC) 
+1) Creating encrypted hard disks 
+2) Creating bootable USB keys 
+3) Securing the main OS 
+4) Tips and tricks 
+
+Chapter 3: Secure dialog (online OPSEC)
+1) Securing the DONE browser
+2) Using reliable DONE services
+3) Encrypting DONE conversations
+4) Tips and tricks 
+
+Chapter 4: The end 
+1) A happy ending 
+2) An abrupt end 
+
+
+Chapter 1: introduction to OPSEC
+1) What is OPSEC?
+OPSEC (or OPerating SECurity) is the protection of the digital environment. It consists of a multitude of methods, tools and reflexes that do two things: Firstly, OPSEC greatly reduces the chance of your sensitive information (IP address, physical address, surname, first name, etc.) being leaked. This is referred to as online OPSEC. Secondly, in the event of an unfortunate leak of sensitive/reprehensible information about you, OPSEC makes it possible to prevent anyone other than you from accessing private information (family albums, compromising photos, etc.). This is known as offline OPSEC. More generally, if properly applied, OPSEC can prevent any legal proceedings, dox, or other joysticks. 
+
+2) Fundamental principles
+Personally, I like to divide OPSEC into two parts:
+First, there's an offline OPSEC. This OPSEC allows you, in the event of a problem, to easily make your sensitive data disappear, or at least make access to it very difficult for unauthorized people. There are 3 fundamental pillars to this OPSEC: 
+-First, encryption and concealment of sensitive data
+-secondly, the compartmentalization of uses
+-Lastly, “virtual cleanliness” (the absence of logs and evidence on your computer).
+There's also another OPSEC: OPSEC online. The sole purpose of this OPSEC is to prevent the leakage of sensitive data. For this OPSEC, there are 3 main pillars:
+-First, the use of appropriate equipment to go on the internet and communicate with people
+-Second, the encryption of communications
+-Lastly, the creation of a "legend", a digital character
+
+
+Chapter 2: Creating an secure environment (offline OPSEC)
+1) Creating encrypted hard disks
+An encrypted hard disk is one on which you have to enter a password, a keyfile, etc. to gain access to the data on it. The data will no longer be available “in the clear”, so an attacker won't be able to read it without the password. To create encrypted hard disks, we're going to use an application called veracrypt. Once you've downloaded veracrypt, you need to check the application's hash (which can be done online, or more directly via the terminal on Ubuntu, with the sha256sum command). Checking Veracrypt's hash allows you to detect a bad download and also to avoid any form of MITM (man in the middle). Once veracrypt has been downloaded and its hash verified, you can install it. Now that veracrypt is installed on your computer, I recommend :
+- Encrypt an entire hard disk, not just a partition (this will prevent sensitive files being stored on the wrong partition).
+- Set up a hidden volume when you install the encrypted partition (of plausible size, preferably between 1/4 and 3/4 of the disk depending on its size), then fill the main partition with “garbage” (non-compromising items not related to the thing you need to protect). Once the encrypted hard disk has been created, you can save your most compromising data on it.
+I strongly advise against leaving traces of your activities on your PC or phone, even if encrypted. An external hard drive is simpler and cheaper to destroy than a computer or phone. However, if you decide not to follow this recommendation, you can use veracrypt to create an encrypted file on your computer and applications like BoxCryptor and Cryptomator for your phone and cloud.
+For activists, there are a number of apps that allow you to document human rights violations and then encrypt (or at least conceal) the recordings. You can use ProofMode, Tella, Obscuracam, ...
+TIPS:
+- Remember to clean your PC's RAM after using veracrypt (traces of your activity can be found there).
+- For more security and information on how veracrypt works, please visit their website (https://veracrypt.eu/).
+- Remember to delete any sensitive files you no longer need.
+- Avoid leaving your PC unattended, as someone could install a physical keylogger.
+- Avoid using keyfiles, unless you have the means to store them securely and encrypted.
+- In the event of a future breach, it may be wise to practice shorthand on your files and use keywords to designate sensitive locations and activities.
+- Always remember to properly eject your hard disk via veracrypt, otherwise the risk of data loss through corruption is not negligible.
+
+2) Creating bootable USB flash drives
+To understand the concept of a bootable USB key, you first need to be familiar with the notion of OS (Operation System). An OS is a system that links the hardware (motherboard, network card, RAM, processors, etc.) and software (software, utilities, etc.) of a computer. The three most widely used OSes in the world are: Windows, MacOS and Linux (which is not technically an OS, but rather a base on which other systems have been developed). A bootable USB key is a USB key on which an OS is burned, and on which it is possible to boot via the BIOS. Having bootable USB keys can be useful in a number of situations, such as:
+-the ability to connect to a specific OS (e.g. Kali Linux or Tail) from almost any machine
+non-persistence of data on the computer on which the key has been booted
+-The ability to quickly destroy incriminating evidence without having to destroy an entire computer
+In our case, the OS we'll be interested in is Tails. Tails is an OS designed for total user confidentiality. In fact, it leaves no logs and almost no traces on the machine to which it has been connected. What's more, Tails' default browser is Tor Browser, which greatly enhances the user's online anonymity. To install Tails, you'll first need to download the Tails OS from their official website (https://tails.net/). Once this has been done, you'll need to check (as you did before with veracrypt) that the hash of the downloaded file corresponds to the hash of the OS (which can be found directly on the Tails site). Once the OS has been downloaded, it needs to be “flashed” onto a USB key. Several tools are available for this, including GNOME disks (for Linux) and BalenaEtcher (for Windows and MacOS). Once the OS has been flashed onto the USB stick, it's ready to use. To use it, you'll need to “boot” it via the BIOS, or your computer's boot manager. 
+TIPS:
+- Try not to enable persistence on Tails. The whole concept is to have no logs, and nothing compromising, on your computer. However, if you enable persistence, traces of your digital activity will remain on the USB key.
+- To shut down Tails, simply remove the key from the computer OR shut down Tails directly via the system menu. Switching off the machine by removing the power cable, etc., will not give Tails time to shut down properly, and will not give Tails time to perform critical tasks such as deleting your activity from RAM. What's more, shutting down the computer in this way can lead to start-up problems when the computer is restarted.
+- Avoid connecting to your Tails via any computer, as you'll be vulnerable to attacks via the hardware (e.g. a keylogger), or more directly via the computer's BIOS/firmware.
+- Tails won't work on Macs without an intel chip
+- Having several bootable USB sticks (one for each use) may be a good idea, depending on the application (a Tails may not be suitable for pentesting, a Linux Kali may not be suitable for exchanging sensitive data).
+
+3) Securing the main OS
+To practice OS hardening, we're going to base ourselves on the ubuntu distribution of Linux. This choice stems from two factors: firstly, Linux is an open source distribution, and ubuntu (which runs on a Linux base) is no exception to this rule; secondly, ubuntu is widely used around the world, so there are answers to many of the problems you might encounter.
+To start with, you need to install ubuntu on your computer. To do this, I recommend buying 1 hard disk and 2 USB sticks. On the first key, we start by installing Tails. We'll install ubuntu from tails. Once Tails has been installed, we can transfer all the computer's data to the hard disk. Once we've saved all the important documents on the computer, we can download the ubuntu ISO from their official site, check the hash after downloading, and finally install it. You can download it via tor (although I strongly advise against this, as it will take you around 10 hours to download).  Then simply install ubuntu on the usb key, boot on the usb key and launch the installation procedure. During the installation procedure, ubuntu will propose additional options during installation (this step takes place when choosing the partition to use for ubuntu). Here, you'll need to select LVM and encrypt the disk during installation. Once ubuntu is installed, you need to :
+-do all updates (I recommend using crontab)
+-close unused ports using ufw
+-do NOT install dubious files (e.g. a game crack downloaded from a Russian site)
+-use (as far as possible) only open source applications whose code has been audited
+-install only necessary applications (fewer applications = fewer potential vulnerabilities)
+-modify the bios to include a password
+-boot any machine on your computer without having to enter a password (I think that on this point, everything depends on the bios used by the computer, so I don't have any specific advice)
+-It's also a good idea to set up a script to check the integrity of your files each time you start up.
+-To get a score out of 100 for your OS hardening, Lynis is a good tool that will give you feedback on the points to be strengthened.
+Normally, if all these steps have been followed, your computer is relatively safe.
+TIPS:
+-For the ubuntu ISO, you can use a torrent download.
+-It's best to understand the scripts you're running on your machine, especially if they're run with root permissions.
+-For sensitive files, use veracrypt (as mentioned above).
+-It is possible to disable the root account
+-It is also possible to reduce user privileges according to the user's utility (for example, it is by no means necessary to have root permissions for word processing).
+
+4) Tips and tricks
+The main aim of physical OPSEC is to prevent any attacker from gaining access to sensitive information. To achieve this, compartmentalization is a major key. You have to try as far as possible not to mix your different digital identities. A perfect example of compartmentalization taken to the extreme is the Qubes OS. With this OS, all your computer's various functionalities are compartmentalized in VMs (Virtual Machines) which totally “seal off” all the computer's functions (wifi, usb sockets, etc.) from the rest of the computer. A less extreme example is whonix, which completely separates the machine that connects to the Internet (called a gateway) from the workstation. All this compartmentalization not only ensures that you don't mix up the different digital identities you may have, but also contains any potential infection of the machine. On whonix, for example, a virus infecting the workstation will have no access to your IP address, as all your Internet traffic is supplied by your gateway, which automatically connects to the tor network.  It's also a good idea to apply the same principle to your phone. For this, I strongly recommend using graphene OS, with multiple profiles enabled.
+A good example setup for anyone concerned about their OPSEC would be:
+-A machine (laptop preferred) running Ubuntu, with encryption active and overall hardening via the OS hardening process for everyday use. To use Windows, you can use virtualbox or other virtual machine software.
+-Hard disks (250-750 GB) encrypted with Veracrypt or TruCrypt, respecting the compartmentalization process (i.e. one disk per use). It's also a good idea to have a “LIFE” hard disk, which contains all important data (password, agenda, OS, basic programs, etc.).
+-Bootable USB sticks. You'll need at least two Tails keys (one for home use and one for away time), an Ubuntu installation key and a key with qubes OS, for the more paranoid.
+-A “decoy” machine, used for hidden activities. This machine must be of low value, as it will be destroyed in the event of termination.
+-A graphene OS phone
+Once all this hardware has been obtained and configured, I recommend a “full wipe” (or reinstallation of all hardware, including of course a change of all machine passwords). During this full wipe, you can, if you wish, also reinstall the hard disks, temporarily backing up the data on a hard disk specially purchased for the occasion.
+
+
+Chapter 3: Secure dialog (online OPSEC)
+1) Browser security
+Browser security is of paramount importance. A determined attacker could gain remote access to your machine via it. What's more, the web browser contains a wealth of valuable information (cookies, user agent, password, etc.). To protect it effectively, I strongly recommend using a browser designed to protect your privacy (at least Firefox, preferably librewolf, or even tor). The first step in strengthening your browser is to disable dangerous functions. Your browser should be in strict security mode, with “website privacy preferences” enabled. In addition, we recommend using extensions such as noscript and https everywhere to guarantee basic browser security. Once your browser is secure, you need to make it anonymous. For this, I recommend using the excellent extensions privacy badger, user agent switcher and manager, privacy opposum and ublock origine. For even greater anonymity, I definitely recommend using the “tor browser” which, through a triple proxy, provides (almost) total anonymity. 
+TIPS:
+-Don't store your passwords in your web browser; use KeePass as a password manager instead.
+-Don't use a VPN. Although they sell themselves as “the best possible protection”, most communicate with the authorities and keep logs of absolutely everything.
+-To connect to strange links, you can use the “croxyproxy” website. This will avoid the IP log.
+-A good alternative to a VPN is a proxy
+
+2) Use reliable services
+Your digital OPSEC depends very heavily on the software you use to mask your identity. The browser and VPN you use will play a vital role in this part of your OPSEC. Once you've chosen your OS, encrypted your disks, configured and secured your browser, you'll need to start your browser. For most sites, you'll need (in order to create an account) an e-mail address, in some cases a telephone number, and even a PGP key. 
+For e-mail, I definitely recommend tutamail. Indeed, tutamail is reputed to be 'nolog' and apparently doesn't store e-mails unencrypted on their servers. There are other e-mail services that offer this kind of service, such as protonmail. The best possible e-mail service to have would still be a locally hosted one, with all the servers used for receiving and sending e-mails running on your machines, at home.
+As for the telephone number, it's hard to get one “anonymously”. However, it is possible to use a credit card (which can be obtained anonymously by purchasing it in monero) to buy an onOff subscription, a service that allows you to receive messages on another “disposable” telephone number. It is advisable to install the onOff application on a virtual machine running an Android OS. 
+As for VPN (if you use one), I definitely recommend mulvad VPN, purchased via tor and paid for in monero.
+For everything to do with communication, I recommend the use of signal, which is end-to-end encrypted to such an extent that it is used by many applications. It's worth remembering, however, that the best possible mode of communication in my opinion is e-mail, because it's easy to host and secure locally.
+More generally, when it comes to using third-party services, remember that everyone is fallible and, what's more, you probably won't know when the person running the service will make a mistake. I can only advise you to run as many applications as possible locally, with open source code.
+
+3) Encrypting conversations
+When a third-party service you use is compromised by an attacker, traces of your messages and conversations can be recovered. Whether your ISP (Internet Service Provider), your chat application or even the third party you're communicating with has been compromised, if your messages are not encrypted, anyone can see them and read them. To counter this, there's a solution: PGP. PGP is an asymmetric encryption system (the key used to make the message impossible to understand is different from the key used to make the message understandable again). To use PGP, you can use the kleopatra application. I won't dwell on how to create and use these PGP keys - I think I'll write a guide to them in the future. I therefore recommend using PGP keys for every discussion exchanged on a digital medium, such as e-mail, SMS, etc. It should be noted that there are certainly many other ways of protecting your privacy and the content of your messages, but none is as easy to use and as robust as PGP.
+
+
+Chapter 4: the end
+1) A happy ending
+A happy ending is, in my opinion, you deciding for yourself that you've done your time and that it's time to move on. In a happy ending, you'll follow three main stages:
+-The destruction of the digital persona: this is when you say goodbye to your friends, partners and so on. This can be done in the normal way (you send a last message to the people you've known, you destroy your accounts, your PGP keys, etc.), or through an “exit scam”. An exit scam is basically a final scam, through which you try to recover as much money as possible by playing on people's sense of trust, etc. Once you've done that, I recommend destroying your accounts on the various platforms you use, then permanently destroying your PGP keys so that nobody can ever impersonate you. Then you'll need to “wipe clean” your various OSes, using nautilus-wipe for example. Once this has been done, I recommend that you wipe the OS directly using the same method.
+-Destroying physical hardware: now's the time to destroy all physical evidence of your former activity. To do this, I recommend microwaving your RAM (to avoid a cold boot attack) and your hard disk, if you have one (to avoid magnetic persistence). Next, I recommend that you cut up everything that makes up your PC and can be identified/traced (motherboard, RAM, SSD, hard disk, graphics card, etc.) into small pieces, then burn everything in a place without too many people around (e.g. in dense wood, in the mountains, etc.). Afterwards, you'll need to collect the resulting waste and dispose of it using the method of your choice. Ultimately, almost no data can be recovered from these fragments, but for the sake of form, I recommend burying them or putting them in the sea (while respecting the ecology, of course).
+-Return to normal life: this is the last stage of the plan. It involves forgetting everything you know and everything you've heard about the subject you're hiding. Many people get caught after they've completely stopped what they were doing, then talked too much about it, thinking that nothing more could happen to them. It's important to understand that the danger is always there until you're LEGALLY no longer responsible for what you've done.
+
+2) An abrupt end
+An abrupt end is, in my opinion, the police or some attacker who decides that you've done your time and that it's time to go and spend some time in the shade. When this kind of thing happens, you need to:
+Switch off all your devices: if they're encrypted at start-up (i.e. if you've followed this guide), the attacker won't have access to the data stored on them.
+-Pray that they don't have a backdoor that records everything you do on your PCs and phones.
+-Say nothing, get a lawyer and let life take its course

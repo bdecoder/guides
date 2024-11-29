@@ -1,0 +1,31 @@
+La première règle de l’OPSEC : ne jamais parler d’OPSEC.
+Chiffrez tout ; partez du principe qu’aucune donnée n’est jamais sécurisée en texte clair.
+Compartimentez votre vie numérique pour éviter la contamination croisée des identités.
+Un mot de passe fort aujourd’hui est faible demain : mettez-les à jour régulièrement.
+Aucun logiciel n’est sécurisé ; utilisez uniquement des logiciels open source et approuvés lorsque cela est possible.
+Les fuites de données commencent souvent par un accès physique ; sécurisez physiquement vos appareils.
+Partez du principe que chaque appareil peut être compromis ; utilisez des appareils distincts à des fins distinctes.
+L’anonymat se construit, il ne s’achète pas : soyez prudent avec les services de « confidentialité ».
+En ligne, ne mélangez jamais des informations réelles et des informations d’alias, même accidentellement.
+Traitez chaque e-mail et chaque lien comme suspects jusqu’à ce qu’ils soient prouvés sûrs.
+Si cela n’est pas pratique, c’est probablement une bonne OPSEC.
+Évitez le suivi ; désactivez les cookies, le suivi des utilisateurs et les autorisations inutiles.
+Les faux personnages doivent avoir des détails plausibles et cohérents.
+Vérifiez toujours les hachages des logiciels avant l’installation.
+Ne comptez jamais sur une seule ligne de défense ; la redondance est essentielle.
+Utilisez des téléphones jetables ou des numéros virtuels pour les communications qui nécessitent l’anonymat.
+Les machines virtuelles peuvent vous protéger, mais ne vous sauveront pas d’une compromission physique.
+Effacez toujours les fichiers de manière sécurisée : la suppression ne signifie pas qu’ils ont disparu.
+Déconnectez-vous, effacez les cookies et fermez les navigateurs lorsque vous avez terminé.
+Partez du principe que votre adversaire en sait plus sur vos habitudes que vous ne le pensez.
+Vérifiez les paramètres de sécurité du réseau : aucun port ouvert sauf si nécessaire.
+Si vous ne le diriez pas en public, ne le mettez pas en ligne.
+Masquez les données sensibles dans des conteneurs chiffrés sur des disques externes.
+Utilisez des mots de passe uniques pour chaque service afin de minimiser l’impact en cas de violation.
+Désactivez tous les services du système d’exploitation inutiles et limitez les autorisations.
+Les VPN et Tor sont des outils, pas des solutions complètes ; utilisez-les à bon escient.
+Une machine compromise doit être effacée et réinitialisée, sans exception.
+En cas de doute, partez du principe que les données sont enregistrées ; réduisez au minimum ce que vous partagez.
+La confiance se gagne et s’étend rarement aux services cloud.
+La destruction physique est la sauvegarde finale pour une suppression sécurisée des données.
+

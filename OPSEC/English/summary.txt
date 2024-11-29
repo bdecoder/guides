@@ -1,0 +1,19 @@
+Chapter 1: Introduction to OPSEC 
+1) Definition and day-to-day application of OPSEC 
+2) OPSEC fundamentals 
+
+Chapter 2: Creating a secure environment (offline OPSEC) 
+1) Creating encrypted hard disks 
+2) Creating bootable USB keys 
+3) Securing the main OS 
+4) Tips and tricks 
+
+Chapter 3: Secure dialog (online OPSEC)
+1) Securing the DONE browser
+2) Using reliable DONE services
+3) Encrypting DONE conversations
+4) Tips and tricks 
+
+Chapter 4: The end 
+1) A happy ending 
+2) An abrupt end 

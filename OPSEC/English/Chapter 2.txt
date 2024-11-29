@@ -1,0 +1,57 @@
+1) Creating encrypted hard disks
+An encrypted hard disk is one on which you have to enter a password, a keyfile, etc. to gain access to the data on it. The data will no longer be available “in the clear”, so an attacker won't be able to read it without the password. To create encrypted hard disks, we're going to use an application called veracrypt. Once you've downloaded veracrypt, you need to check the application's hash (which can be done online, or more directly via the terminal on Ubuntu, with the sha256sum command). Checking Veracrypt's hash allows you to detect a bad download and also to avoid any form of MITM (man in the middle). Once veracrypt has been downloaded and its hash verified, you can install it. Now that veracrypt is installed on your computer, I recommend :
+- Encrypt an entire hard disk, not just a partition (this will prevent sensitive files being stored on the wrong partition).
+- Set up a hidden volume when you install the encrypted partition (of plausible size, preferably between 1/4 and 3/4 of the disk depending on its size), then fill the main partition with “garbage” (non-compromising items not related to the thing you need to protect). Once the encrypted hard disk has been created, you can save your most compromising data on it.
+I strongly advise against leaving traces of your activities on your PC or phone, even if encrypted. An external hard drive is simpler and cheaper to destroy than a computer or phone. However, if you decide not to follow this recommendation, you can use veracrypt to create an encrypted file on your computer and applications like BoxCryptor and Cryptomator for your phone and cloud.
+For activists, there are a number of apps that allow you to document human rights violations and then encrypt (or at least conceal) the recordings. You can use ProofMode, Tella, Obscuracam, ...
+TIPS:
+- Remember to clean your PC's RAM after using veracrypt (traces of your activity can be found there).
+- For more security and information on how veracrypt works, please visit their website (https://veracrypt.eu/).
+- Remember to delete any sensitive files you no longer need.
+- Avoid leaving your PC unattended, as someone could install a physical keylogger.
+- Avoid using keyfiles, unless you have the means to store them securely and encrypted.
+- In the event of a future breach, it may be wise to practice shorthand on your files and use keywords to designate sensitive locations and activities.
+- Always remember to properly eject your hard disk via veracrypt, otherwise the risk of data loss through corruption is not negligible.
+
+2) Creating bootable USB flash drives
+To understand the concept of a bootable USB key, you first need to be familiar with the notion of OS (Operation System). An OS is a system that links the hardware (motherboard, network card, RAM, processors, etc.) and software (software, utilities, etc.) of a computer. The three most widely used OSes in the world are: Windows, MacOS and Linux (which is not technically an OS, but rather a base on which other systems have been developed). A bootable USB key is a USB key on which an OS is burned, and on which it is possible to boot via the BIOS. Having bootable USB keys can be useful in a number of situations, such as:
+-the ability to connect to a specific OS (e.g. Kali Linux or Tail) from almost any machine
+non-persistence of data on the computer on which the key has been booted
+-The ability to quickly destroy incriminating evidence without having to destroy an entire computer
+In our case, the OS we'll be interested in is Tails. Tails is an OS designed for total user confidentiality. In fact, it leaves no logs and almost no traces on the machine to which it has been connected. What's more, Tails' default browser is Tor Browser, which greatly enhances the user's online anonymity. To install Tails, you'll first need to download the Tails OS from their official website (https://tails.net/). Once this has been done, you'll need to check (as you did before with veracrypt) that the hash of the downloaded file corresponds to the hash of the OS (which can be found directly on the Tails site). Once the OS has been downloaded, it needs to be “flashed” onto a USB key. Several tools are available for this, including GNOME disks (for Linux) and BalenaEtcher (for Windows and MacOS). Once the OS has been flashed onto the USB stick, it's ready to use. To use it, you'll need to “boot” it via the BIOS, or your computer's boot manager. 
+TIPS:
+- Try not to enable persistence on Tails. The whole concept is to have no logs, and nothing compromising, on your computer. However, if you enable persistence, traces of your digital activity will remain on the USB key.
+- To shut down Tails, simply remove the key from the computer OR shut down Tails directly via the system menu. Switching off the machine by removing the power cable, etc., will not give Tails time to shut down properly, and will not give Tails time to perform critical tasks such as deleting your activity from RAM. What's more, shutting down the computer in this way can lead to start-up problems when the computer is restarted.
+- Avoid connecting to your Tails via any computer, as you'll be vulnerable to attacks via the hardware (e.g. a keylogger), or more directly via the computer's BIOS/firmware.
+- Tails won't work on Macs without an intel chip
+- Having several bootable USB sticks (one for each use) may be a good idea, depending on the application (a Tails may not be suitable for pentesting, a Linux Kali may not be suitable for exchanging sensitive data).
+
+3) Securing the main OS
+To practice OS hardening, we're going to base ourselves on the ubuntu distribution of Linux. This choice stems from two factors: firstly, Linux is an open source distribution, and ubuntu (which runs on a Linux base) is no exception to this rule; secondly, ubuntu is widely used around the world, so there are answers to many of the problems you might encounter.
+To start with, you need to install ubuntu on your computer. To do this, I recommend buying 1 hard disk and 2 USB sticks. On the first key, we start by installing Tails. We'll install ubuntu from tails. Once Tails has been installed, we can transfer all the computer's data to the hard disk. Once we've saved all the important documents on the computer, we can download the ubuntu ISO from their official site, check the hash after downloading, and finally install it. You can download it via tor (although I strongly advise against this, as it will take you around 10 hours to download).  Then simply install ubuntu on the usb key, boot on the usb key and launch the installation procedure. During the installation procedure, ubuntu will propose additional options during installation (this step takes place when choosing the partition to use for ubuntu). Here, you'll need to select LVM and encrypt the disk during installation. Once ubuntu is installed, you need to :
+-do all updates (I recommend using crontab)
+-close unused ports using ufw
+-do NOT install dubious files (e.g. a game crack downloaded from a Russian site)
+-use (as far as possible) only open source applications whose code has been audited
+-install only necessary applications (fewer applications = fewer potential vulnerabilities)
+-modify the bios to include a password
+-boot any machine on your computer without having to enter a password (I think that on this point, everything depends on the bios used by the computer, so I don't have any specific advice)
+-It's also a good idea to set up a script to check the integrity of your files each time you start up.
+-To get a score out of 100 for your OS hardening, Lynis is a good tool that will give you feedback on the points to be strengthened.
+Normally, if all these steps have been followed, your computer is relatively safe.
+TIPS:
+-For the ubuntu ISO, you can use a torrent download.
+-It's best to understand the scripts you're running on your machine, especially if they're run with root permissions.
+-For sensitive files, use veracrypt (as mentioned above).
+-It is possible to disable the root account
+-It is also possible to reduce user privileges according to the user's utility (for example, it is by no means necessary to have root permissions for word processing).
+
+4) Tips and tricks
+The main aim of physical OPSEC is to prevent any attacker from gaining access to sensitive information. To achieve this, compartmentalization is a major key. You have to try as far as possible not to mix your different digital identities. A perfect example of compartmentalization taken to the extreme is the Qubes OS. With this OS, all your computer's various functionalities are compartmentalized in VMs (Virtual Machines) which totally “seal off” all the computer's functions (wifi, usb sockets, etc.) from the rest of the computer. A less extreme example is whonix, which completely separates the machine that connects to the Internet (called a gateway) from the workstation. All this compartmentalization not only ensures that you don't mix up the different digital identities you may have, but also contains any potential infection of the machine. On whonix, for example, a virus infecting the workstation will have no access to your IP address, as all your Internet traffic is supplied by your gateway, which automatically connects to the tor network.  It's also a good idea to apply the same principle to your phone. For this, I strongly recommend using graphene OS, with multiple profiles enabled.
+A good example setup for anyone concerned about their OPSEC would be:
+-A machine (laptop preferred) running Ubuntu, with encryption active and overall hardening via the OS hardening process for everyday use. To use Windows, you can use virtualbox or other virtual machine software.
+-Hard disks (250-750 GB) encrypted with Veracrypt or TruCrypt, respecting the compartmentalization process (i.e. one disk per use). It's also a good idea to have a “LIFE” hard disk, which contains all important data (password, agenda, OS, basic programs, etc.).
+-Bootable USB sticks. You'll need at least two Tails keys (one for home use and one for away time), an Ubuntu installation key and a key with qubes OS, for the more paranoid.
+-A “decoy” machine, used for hidden activities. This machine must be of low value, as it will be destroyed in the event of termination.
+-A graphene OS phone
+Once all this hardware has been obtained and configured, I recommend a “full wipe” (or reinstallation of all hardware, including of course a change of all machine passwords). During this full wipe, you can, if you wish, also reinstall the hard disks, temporarily backing up the data on a hard disk specially purchased for the occasion.
